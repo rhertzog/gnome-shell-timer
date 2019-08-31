@@ -58,12 +58,11 @@ def hex_to_color(hexstr):
 
 class ColorSelect:
     def __init__(self, name):
-        self.label = Gtk.Label(_('{} Chart Color: '.format(name)))
+        self.label = Gtk.Label(label=_('{} Chart Color: '.format(name)))
         self.picker = Gtk.ColorButton()
         self.actor = Gtk.HBox()
         self.actor.add(self.label)
         self.actor.add(self.picker)
-        self.picker.set_use_alpha(True)
 
     def set_value(self, value):
         self.picker.set_rgba(hex_to_color(value))
@@ -71,7 +70,7 @@ class ColorSelect:
 
 class IntSelect:
     def __init__(self, name):
-        self.label = Gtk.Label(name + ": ")
+        self.label = Gtk.Label(label=name + ": ")
         self.spin = Gtk.SpinButton()
         self.actor = Gtk.HBox()
         self.actor.add(self.label)
@@ -127,7 +126,7 @@ def edited_duration(cell, path, new_text, treeview, store, schema):
 class SettingFrame:
     def __init__(self, name, schema):
         self.schema = schema
-        self.label = Gtk.Label(name)
+        self.label = Gtk.Label(label=name)
         self.frame = Gtk.Frame()
         self.frame.set_border_width(10)
         self.vbox = Gtk.VBox(spacing=20)
@@ -148,8 +147,7 @@ class SettingFrame:
             presets = self.schema.get_value(key)
             for key in presets.keys():
                 store.append([key, presets[key]])
-            treeView = Gtk.TreeView(store)
-            treeView.set_rules_hint(True)
+            treeView = Gtk.TreeView(model=store)
             cellrenderer = Gtk.CellRendererText()
             cellrenderer.set_property('editable', True)
             column = Gtk.TreeViewColumn(_("Name"), cellrenderer, text=0)
@@ -173,7 +171,7 @@ class SettingFrame:
             item.connect('clicked', delete_row, treeView, store, self.schema)
 
         elif sections[1] == 'hours':
-            self.hbox0.add(Gtk.Label(_('Set default timer values:')))
+            self.hbox0.add(Gtk.Label(label=_('Set default timer values:')))
             item = IntSelect(_('Hours'))
             item.set_args(0, 23, 1, 10)
             item.set_value(self.schema.get_int(key))
@@ -267,7 +265,7 @@ class App:
     setting_items = ('manual', 'ui', 'presets', 'sound')
 
     def __init__(self):
-        self.schema = Gio.Settings('org.gnome.shell.extensions.timer')
+        self.schema = Gio.Settings(schema='org.gnome.shell.extensions.timer')
         keys = self.schema.keys()
         self.window = Gtk.Window(title=_('Timer Applet Configurator'))
         self.window.connect('destroy', Gtk.main_quit)
