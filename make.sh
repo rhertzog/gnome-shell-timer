@@ -3,7 +3,6 @@
 install() {
     $SUDO mkdir -p "$DEST"
     $SUDO cp -R "timer@olebowle.gmx.com" "$DEST"
-    $SUDO cp -R "kitchen_timer.ogg" "$DEST/timer@olebowle.gmx.com/"
 
 	cat org.gnome.shell.extensions.timer.gschema.xml.init | sed "s|__DEST__|${DEST}|" > org.gnome.shell.extensions.timer.gschema.xml
     $SUDO mkdir -p "$USR_SHARE/glib-2.0/schemas"
