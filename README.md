@@ -12,22 +12,32 @@ Get from [Debian Packages](http://packages.debian.org/sid/gnome-shell-timer)
 
 ## Direct from source
 - Get Source
-    * for older versions see [releases](https://github.com/olebowle/gnome-shell-timer/releases)
-    * [master branch](https://github.com/olebowle/gnome-shell-timer/zipball/master)
+    * for older versions see [releases](https://github.com/rhertzog/gnome-shell-timer/releases)
+    * [master branch](https://github.com/rhertzog/gnome-shell-timer/zipball/master)
 
-- use the provided [make.sh](https://github.com/olebowle/gnome-shell-timer/blob/master/make.sh) script du (un)install the extension
-- Enable the extension using gnome-tweak-tool
+- use the provided [make.sh](https://github.com/rhertzog/gnome-shell-timer/blob/master/make.sh) script to (un)install the extension
+- Enable the extension using gnome-tweaks or gnome-extensions-app
 - Press *Alt + F2*, and *r* in command to restart gnome-shell
 
-# Configuration
-- Please refer to the Wiki:
-    * [Gnome-shell 3.x](https://github.com/olebowle/gnome-shell-timer/wiki/Configuration-3.x)
-    * [Gnome-shell 3.0](https://github.com/olebowle/gnome-shell-timer/wiki/Configuration-3.0)
+# Maintenance status
+
+Since Ole Ernst (the original author) lost interest in gnome-shell-timer
+and since pull requests were left unanswered, and since I was regularly
+working on it as part of my Debian packaging work, I decided to step up to
+maintain this extension.
+
+I don't plan to add new features but I will at least process pull requests
+to keep the extension working with the latest GNOME versions and I will
+happily grant commit rights to other contributors that have shown some
+ability and desire to maintain the extension.
+
+ -- Raphaël Hertzog
 
 # License
-See [COPYING](https://github.com/olebowle/gnome-shell-timer/blob/master/COPYING) for details.
+See [COPYING](https://github.com/rhertzog/gnome-shell-timer/blob/master/COPYING) for details.
 
 # Thanks
+- [Ole Ernst](https://github.com/olebowle) for the initial work on gnome-shell-timer
 - Contributors: [gnome-shell-pomodoro](https://github.com/codito/gnome-shell-pomodoro/contributors) which was a nice starting point for this extension (code and documentation)
 - Contributors: [gnome-shell-system-monitor-applet](https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet/contributors) - pie diagram
 - [Timer Applet](https://launchpad.net/timer-applet) - original idea
