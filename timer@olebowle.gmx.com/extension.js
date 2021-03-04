@@ -402,7 +402,7 @@ const Indicator = new Lang.Class({
 			Main.messageTray.add(source);
 			let notification = new MessageTray.Notification(source, text, null);
 			notification.setTransient(true);
-			source.notify(notification);
+			source.showNotification(notification);
 		}
 		if(this._showPersistentNotifications) {
 			// Create persistent message modal dialog
