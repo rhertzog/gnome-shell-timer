@@ -1,3 +1,18 @@
+# This extension is unmaintained
+
+At first, after having seen the extension abandoned by its original author
+and since I was still using it, I decided to try to maintain a fork. But
+I quickly discovered a better maintained alternative and I suggest that
+you switch to it:
+
+* https://github.com/blackjackshellac/kitchenTimer
+* https://extensions.gnome.org/extension/3955/kitchen-timer/
+
+The gnome-shell-timer repository that you are looking at has some
+supplementary work compared to
+[olebowle](https://github.com/olebowle/gnome-shell-timer)'s repo and is
+known to work with GNOME 3.38. But don't expect further changes to it.
+
 # Timer extension for gnome-shell
 - Provides a countdown timer in the gnome-shell top panel
 - User adjustable timer presets for common tasks
